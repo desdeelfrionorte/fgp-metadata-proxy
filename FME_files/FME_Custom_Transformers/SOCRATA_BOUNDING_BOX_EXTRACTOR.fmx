@@ -1,6 +1,6 @@
 #! <?xml version="1.0" encoding="UTF-8" ?>
 #! <TRANSFORMER
-# TRANSFORMER_BEGIN SOCRATA_BOUNDING_BOX_EXTRACTOR,1,,e33ca6a8-e0c6-4576-b417-b4793206fd1c,"Linked by Default",No,NO_PARALLELISM,,No,20200,YES,No,37,No,
+# TRANSFORMER_BEGIN SOCRATA_BOUNDING_BOX_EXTRACTOR,1,,1ca6672f-6fd8-4dea-bcbf-089086c3ae62,"Linked by Default",No,NO_PARALLELISM,,No,20200,YES,No,37,No,
 # 
 # TRANSFORMER_END
 #!   ATTR_TYPE_ENCODING="SDF"
@@ -11,8 +11,8 @@
 #!   DOC_TOP_LEFT="-2144.22 -2069.22"
 #!   EXPLICIT_BOOKMARK_ORDER="false"
 #!   FME_BUILD_NUM="20200"
-#!   FME_DOCUMENT_GUID="e33ca6a8-e0c6-4576-b417-b4793206fd1c"
-#!   FME_DOCUMENT_PRIORGUID="9bdf822e-a6c0-4b76-a764-4e91488b3e8e,46580bbd-1f87-42a4-89f3-15e130183caa,91e18842-c02f-4fea-be91-2eb5d79a3ba2,5b4de3a7-0893-4846-a44d-1fdd6d84ef6f,8bb39350-2475-4419-90b6-e819bd0b1e33,cb05d12e-085b-4150-b6b0-cbc102d4fce0,3ed8e1a5-e2d9-4af7-b9f4-32c85e4bf4c4,a7e86d67-ff3c-4a0f-b14a-d3aacdf27517,57be192b-89b3-4079-94fb-3e361715ea51,934801ae-61bd-4360-b469-ad5b188109b7,58e646d9-2f4c-4839-b667-981efe2b7749,993c5f4e-8db4-45e9-943b-c4cc9248c7a2,04f02d3d-b45b-4e40-b333-73194e53e39a,c09d88b8-d3ba-4087-90e1-d4e2ddad1fbe,4f741f3f-cddd-4ca7-b717-e85207c407a8,e41224ea-33f5-4cf5-88c3-4d12abe67ab3,702ea28b-617c-4a6e-b90f-af067a516acf,0bfc60f3-056d-4ea9-b9d8-db8791f69932,d0a17960-a07c-4c5f-8ff3-999e56064d8c"
+#!   FME_DOCUMENT_GUID="1ca6672f-6fd8-4dea-bcbf-089086c3ae62"
+#!   FME_DOCUMENT_PRIORGUID="9bdf822e-a6c0-4b76-a764-4e91488b3e8e,46580bbd-1f87-42a4-89f3-15e130183caa,91e18842-c02f-4fea-be91-2eb5d79a3ba2,5b4de3a7-0893-4846-a44d-1fdd6d84ef6f,8bb39350-2475-4419-90b6-e819bd0b1e33,cb05d12e-085b-4150-b6b0-cbc102d4fce0,3ed8e1a5-e2d9-4af7-b9f4-32c85e4bf4c4,a7e86d67-ff3c-4a0f-b14a-d3aacdf27517,57be192b-89b3-4079-94fb-3e361715ea51,934801ae-61bd-4360-b469-ad5b188109b7,58e646d9-2f4c-4839-b667-981efe2b7749,993c5f4e-8db4-45e9-943b-c4cc9248c7a2,04f02d3d-b45b-4e40-b333-73194e53e39a,c09d88b8-d3ba-4087-90e1-d4e2ddad1fbe,4f741f3f-cddd-4ca7-b717-e85207c407a8,e41224ea-33f5-4cf5-88c3-4d12abe67ab3,702ea28b-617c-4a6e-b90f-af067a516acf,0bfc60f3-056d-4ea9-b9d8-db8791f69932,d0a17960-a07c-4c5f-8ff3-999e56064d8c,e33ca6a8-e0c6-4576-b417-b4793206fd1c,d61fbfcd-232e-48f0-aaeb-42ee8fb8536d"
 #!   FME_LINKED_TRANSFORMER_VERSION="1"
 #!   FME_PROCESS_COUNT="NO_PARALLELISM"
 #!   FME_PROCESS_GROUPS_ORDERED="No"
@@ -24,7 +24,7 @@
 #!   HISTORY=""
 #!   ITERATION_COUNT_ATTR=""
 #!   LAST_SAVE_BUILD="FME(R) 2020.0.0.0 (20200309 - Build 20200 - WIN32)"
-#!   LAST_SAVE_DATE="2021-08-25T17:01:30"
+#!   LAST_SAVE_DATE="2022-08-02T10:49:38"
 #!   MARKDOWN_DESCRIPTION=""
 #!   MARKDOWN_USAGE=""
 #!   MAX_LOOP_ITERATIONS=""
@@ -36,11 +36,11 @@
 #!   TITLE="SOCRATA_BOUNDING_BOX_EXTRACTOR"
 #!   USAGE=""
 #!   USE_MARKDOWN="NO"
-#!   VIEW_POSITION="-1804.71 765.633"
+#!   VIEW_POSITION="-754.878 1197.25"
 #!   WARN_INVALID_XFORM_PARAM="Yes"
 #!   WORKSPACE_VERSION="1"
 #!   XFORM_DEPRECATED="No"
-#!   ZOOM_SCALE="80"
+#!   ZOOM_SCALE="77"
 #! >
 #! <DATASETS>
 #! </DATASETS>
@@ -61,6 +61,11 @@
 #! <GLOBAL_PARAMETER
 #!   GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR SocrataAppToken Socrata App Token:"
 #!   DEFAULT_VALUE="FL3Cxsebg0Vf6JQ0CnbMujHkQ"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI CHOICE_OR_ATTR URL_VALIDATION Yes%No URL_VALIDATION:"
+#!   DEFAULT_VALUE="Yes"
 #!   IS_STAND_ALONE="true"
 #! />
 #! </GLOBAL_PARAMETERS>
@@ -133,14 +138,14 @@
 #!   IDENTIFIER="50"
 #!   NAME="Extract Bounding Box"
 #!   DESCRIPTION=""
-#!   TOP_LEFT="1139.8182866984516 728.04563800398751"
+#!   TOP_LEFT="190.74866073336057 728.04563800398751"
 #!   ORDER="500000000000084"
 #!   PALETTE_COLOR="Color7"
-#!   BOTTOM_RIGHT="9040.6325889591171 -1567.7240105734384"
-#!   BOUNDING_RECT="1139.8182866984516 728.04563800398751 7900.8143022606655 2295.7696485774259"
+#!   BOTTOM_RIGHT="9040.6325889591262 -1567.7240105734384"
+#!   BOUNDING_RECT="190.74866073336057 728.04563800398751 8849.883928225765 2295.7696485774259"
 #!   STICKY="true"
 #!   COLOUR="0.59215686274509804,0.75294117647058822,0.90980392156862744,1"
-#!   CONTENTS="36 5 28 11 6 62 13 34 10 54 8 33 16 57 17 40 3 30 26 31 64 53 38 14 7 56 45 63 12 51 39 27 58 60 55 61 4 15 47 29 35 "
+#!   CONTENTS="39 74 73 75 30 8 26 58 55 79 10 6 57 15 35 69 60 40 77 45 3 5 29 64 17 27 38 51 62 81 47 78 54 61 11 28 7 76 63 13 12 36 4 80 14 53 56 16 "
 #! >
 #! </BOOKMARK>
 #! <BOOKMARK
@@ -154,7 +159,7 @@
 #!   BOUNDING_RECT="6387.4405674607715 440.22135972497711 2359.7908915135722 264.4383518948988"
 #!   STICKY="true"
 #!   COLOUR="0.59607843137254901,0.91764705882352937,0.72549019607843135,1"
-#!   CONTENTS="16 15 38 17 39 40 14 "
+#!   CONTENTS="16 17 38 14 39 40 15 "
 #! >
 #! </BOOKMARK>
 #! <BOOKMARK
@@ -266,8 +271,8 @@
 #!   IDENTIFIER="5"
 #!   TYPE="HTTPCaller"
 #!   VERSION="1"
-#!   POSITION="2568.9009640936074 -268.32739526467532"
-#!   BOUNDING_RECT="2568.9009640936074 -268.32739526467532 454 71"
+#!   POSITION="2662.2460533886556 -268.32739526467532"
+#!   BOUNDING_RECT="2662.2460533886556 -268.32739526467532 454 71"
 #!   ORDER="500000000000137"
 #!   PARMS_EDITED="true"
 #!   ENABLED="true"
@@ -445,8 +450,8 @@
 #!   IDENTIFIER="8"
 #!   TYPE="StringConcatenator"
 #!   VERSION="7"
-#!   POSITION="1956.4631045748606 -190.20161400686271"
-#!   BOUNDING_RECT="1956.4631045748606 -190.20161400686271 454 71"
+#!   POSITION="2082.2760510160133 -267.45397324103112"
+#!   BOUNDING_RECT="2082.2760510160133 -267.45397324103112 454 71"
 #!   ORDER="500000000000142"
 #!   PARMS_EDITED="true"
 #!   ENABLED="true"
@@ -519,8 +524,8 @@
 #!   IDENTIFIER="10"
 #!   TYPE="UUIDGenerator"
 #!   VERSION="0"
-#!   POSITION="1349.5691144010598 432.69022652211686"
-#!   BOUNDING_RECT="1349.5691144010598 432.69022652211686 454 71"
+#!   POSITION="326.83161429878623 432.69022652211686"
+#!   BOUNDING_RECT="326.83161429878623 432.69022652211686 454 71"
 #!   ORDER="500000000000770"
 #!   PARMS_EDITED="false"
 #!   ENABLED="true"
@@ -544,8 +549,8 @@
 #!   IDENTIFIER="11"
 #!   TYPE="AttributeKeeper"
 #!   VERSION="3"
-#!   POSITION="1349.5691144010598 156.93727404868628"
-#!   BOUNDING_RECT="1349.5691144010598 156.93727404868628 454 71"
+#!   POSITION="842.25884649318596 -268.32739526467532"
+#!   BOUNDING_RECT="842.25884649318596 -268.32739526467532 454 71"
 #!   ORDER="500000000000771"
 #!   PARMS_EDITED="true"
 #!   ENABLED="true"
@@ -700,8 +705,8 @@
 #!   IDENTIFIER="13"
 #!   TYPE="ListExploder"
 #!   VERSION="6"
-#!   POSITION="1232.3804425143408 -698.01919218264436"
-#!   BOUNDING_RECT="1232.3804425143408 -698.01919218264436 454 71"
+#!   POSITION="888.02519432397867 -730.48704932874841"
+#!   BOUNDING_RECT="888.02519432397867 -730.48704932874841 454 71"
 #!   ORDER="500000000000775"
 #!   PARMS_EDITED="true"
 #!   ENABLED="true"
@@ -939,8 +944,8 @@
 #!   IDENTIFIER="45"
 #!   TYPE="Cloner"
 #!   VERSION="0"
-#!   POSITION="3503.1189127680736 -802.15988563394433"
-#!   BOUNDING_RECT="3503.1189127680736 -802.15988563394433 454 71"
+#!   POSITION="4355.4001628533033 -1086.2536356623536"
+#!   BOUNDING_RECT="4355.4001628533033 -1086.2536356623536 454 71"
 #!   ORDER="500000000001822"
 #!   PARMS_EDITED="true"
 #!   ENABLED="true"
@@ -954,17 +959,17 @@
 #!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #!     <XFORM_ATTR ATTR_NAME="geomtype" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #!     <XFORM_ATTR ATTR_NAME="uuidjoinkey" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #!     <XFORM_ATTR ATTR_NAME="GeoAPIEndpoint" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #!     <XFORM_ATTR ATTR_NAME="bbox_json" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #!     <XFORM_ATTR ATTR_NAME="_json_error{}.message" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #!     <XFORM_ATTR ATTR_NAME="_json_error{}.line" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #!     <XFORM_ATTR ATTR_NAME="_json_error{}.column" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #!     <XFORM_ATTR ATTR_NAME="_json_error{}.severity" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #!     <XFORM_ATTR ATTR_NAME="features" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #!     <XFORM_ATTR ATTR_NAME="coordinatestring" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #!     <XFORM_ATTR ATTR_NAME="_copynum" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #!     <XFORM_PARM PARM_NAME="COPIES" PARM_VALUE="1"/>
@@ -1044,8 +1049,8 @@
 #!   IDENTIFIER="58"
 #!   TYPE="Tester"
 #!   VERSION="2"
-#!   POSITION="1789.0803908039072 -531.25531255312546"
-#!   BOUNDING_RECT="1789.0803908039072 -531.25531255312546 454 71"
+#!   POSITION="1492.8111943457093 -251.22004466797915"
+#!   BOUNDING_RECT="1492.8111943457093 -251.22004466797915 454 71"
 #!   ORDER="500000000001825"
 #!   PARMS_EDITED="true"
 #!   ENABLED="true"
@@ -1083,8 +1088,8 @@
 #!   IDENTIFIER="65"
 #!   TYPE="Tester"
 #!   VERSION="2"
-#!   POSITION="52.083854171875117 -531.25531255312546"
-#!   BOUNDING_RECT="52.083854171875117 -531.25531255312546 454 71"
+#!   POSITION="-418.70007444663179 -531.25531255312535"
+#!   BOUNDING_RECT="-418.70007444663179 -531.25531255312535 454 71"
 #!   ORDER="500000000001826"
 #!   PARMS_EDITED="true"
 #!   ENABLED="true"
@@ -1157,6 +1162,84 @@
 #!     <XFORM_ATTR ATTR_NAME="dataLayers{}.geomtype" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #!     <XFORM_ATTR ATTR_NAME="assetType" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Junction_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="69"
+#!   TYPE="Tester"
+#!   VERSION="2"
+#!   POSITION="557.34555460521005 123.5921847536375"
+#!   BOUNDING_RECT="557.34555460521005 123.5921847536375 460.00106825772946 71"
+#!   ORDER="500000000001718"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#!   OUTPUT_FT_ORDER="FAILED%PASSED"
+#! >
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="dataLayers{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dataLayers{}.layerid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dataLayers{}.geomcol" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dataLayers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dataLayers{}.geomtype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="assetType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="uuidjoinkey" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="dataLayers{}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="dataLayers{}.layerid" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="dataLayers{}.geomcol" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="dataLayers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="dataLayers{}.geomtype" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="assetType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="uuidjoinkey" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_MSG" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="1"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST &lt;at&gt;LowerCase&lt;openparen&gt;$(URL_VALIDATION)&lt;closeparen&gt; = yes"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="TEST"/>
+#!     <XFORM_PARM PARM_NAME="TEST_PREVIEW_GROUP" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tester_URLValidation"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="75"
+#!   TYPE="Terminator"
+#!   VERSION="3"
+#!   POSITION="1958.998247904557 -651.25531255312546"
+#!   BOUNDING_RECT="1958.998247904557 -651.25531255312546 454 71"
+#!   ORDER="500000000001829"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="Translation&lt;space&gt;Terminated"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Terminator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="78"
+#!   TYPE="Junction"
+#!   VERSION="0"
+#!   POSITION="1661.6537535901168 362.69022652211686"
+#!   BOUNDING_RECT="1661.6537535901168 362.69022652211686 61 61"
+#!   ORDER="500000000001830"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="dataLayers{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dataLayers{}.layerid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dataLayers{}.geomcol" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dataLayers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dataLayers{}.geomtype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="assetType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="uuidjoinkey" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Junction_3"/>
 #! </TRANSFORMER>
 #! </TRANSFORMERS>
 #! <SUBDOCUMENT_IOS>
@@ -1289,7 +1372,7 @@
 #!   EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
-#!   IDENTIFIER="31"
+#!   IDENTIFIER="77"
 #!   SOURCE_NODE="8"
 #!   TARGET_NODE="5"
 #!   SOURCE_PORT_DESC="fo 0 OUTPUT"
@@ -1319,11 +1402,11 @@
 #!   EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
-#!   IDENTIFIER="33"
+#!   IDENTIFIER="79"
 #!   SOURCE_NODE="10"
-#!   TARGET_NODE="12"
+#!   TARGET_NODE="78"
 #!   SOURCE_PORT_DESC="fo 0 OUTPUT"
-#!   TARGET_PORT_DESC="fi 0 REQUESTOR"
+#!   TARGET_PORT_DESC="fi 0 "
 #!   ENABLED="true"
 #!   EXECUTION_IDX="0"
 #!   HIDDEN="false"
@@ -1334,9 +1417,9 @@
 #!   EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
-#!   IDENTIFIER="34"
+#!   IDENTIFIER="73"
 #!   SOURCE_NODE="10"
-#!   TARGET_NODE="11"
+#!   TARGET_NODE="69"
 #!   SOURCE_PORT_DESC="fo 0 OUTPUT"
 #!   TARGET_PORT_DESC="fi 0 "
 #!   ENABLED="true"
@@ -1544,6 +1627,36 @@
 #!   EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
+#!   IDENTIFIER="74"
+#!   SOURCE_NODE="69"
+#!   TARGET_NODE="11"
+#!   SOURCE_PORT_DESC="fo 1 PASSED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="80"
+#!   SOURCE_NODE="78"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="fi 0 REQUESTOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
 #!   IDENTIFIER="54"
 #!   SOURCE_NODE="5"
 #!   TARGET_NODE="45"
@@ -1619,10 +1732,40 @@
 #!   EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
+#!   IDENTIFIER="76"
+#!   SOURCE_NODE="58"
+#!   TARGET_NODE="75"
+#!   SOURCE_PORT_DESC="fo 1 FAILED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
 #!   IDENTIFIER="71"
 #!   SOURCE_NODE="65"
 #!   TARGET_NODE="67"
 #!   SOURCE_PORT_DESC="fo 1 FAILED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="81"
+#!   SOURCE_NODE="69"
+#!   TARGET_NODE="78"
+#!   SOURCE_PORT_DESC="fo 0 FAILED"
 #!   TARGET_PORT_DESC="fi 0 "
 #!   ENABLED="true"
 #!   EXECUTION_IDX="0"
@@ -1647,13 +1790,14 @@
 FME_PYTHON_VERSION 37
 DEFAULT_MACRO $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_DOMAIN 
 DEFAULT_MACRO $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_SocrataAppToken FL3Cxsebg0Vf6JQ0CnbMujHkQ
+DEFAULT_MACRO $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_URL_VALIDATION Yes
 #! START_HEADER
 #! END_HEADER
 
 DEFAULT_MACRO WB_CURRENT_CONTEXT
 DEFAULT_MACRO SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME ""
 INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)}]
-FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_feature_input1629925290 Input Splitter"   INPUT FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_feature_input"   OUTPUT FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_feature_input"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_feature_input1659451778 Input Splitter"   INPUT FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_feature_input"   OUTPUT FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_feature_input"
 # -------------------------------------------------------------------------
 FACTORY_DEF * TeeFactory    FACTORY_NAME $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeExposer_2    INPUT  FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_feature_input"    OUTPUT FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeExposer_2_OUTPUT"
 # -------------------------------------------------------------------------
@@ -1666,12 +1810,22 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSP
 FACTORY_DEF * TeeFactory    FACTORY_NAME $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_UUIDGenerator_2    INPUT  FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Tester_2_PASSED"    OUTPUT FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_UUIDGenerator_2_OUTPUT"         "uuidjoinkey" @UUID()
 FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_UUIDGenerator_2 OUTPUT Splitter"   INPUT FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_UUIDGenerator_2_OUTPUT"   OUTPUT FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_UUIDGenerator_2_OUTPUT_0_Tmd5Sjj+6+k="   OUTPUT FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_UUIDGenerator_2_OUTPUT_1_fHiAnyFrSyw="
 # -------------------------------------------------------------------------
-INCLUDE [    set macroLine "MACRO $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeKeeper_2_b6f1c480_be8e_43b6_9317_c92ccc4e6a8a0_LIST_EXP ";    foreach attr [split "dataLayers<opencurly><closecurly>"] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
-FACTORY_DEF {*} TeeFactory    FACTORY_NAME $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeKeeper_2    INPUT  FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_UUIDGenerator_2_OUTPUT_1_fHiAnyFrSyw="    OUTPUT { FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeKeeper_2_OUTPUT"        @KeepAttributes(fme_encoded,uuidjoinkey,fme_pcre_match,"^fme_$($(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeKeeper_2_b6f1c480_be8e_43b6_9317_c92ccc4e6a8a0_LIST_EXP)")         }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Tester_URLValidation    INPUT  FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_UUIDGenerator_2_OUTPUT_1_fHiAnyFrSyw="    TEST "@EvaluateExpression(FDIV,STRING_ENCODED,<at>LowerCase<openparen>$($(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_URL_VALIDATION$encode)<closeparen>,$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Tester_URLValidation)" = yes ENCODED    BOOLEAN_OPERATOR OR    COMPOSITE_TEST_EXPR "1"    OUTPUT PASSED FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Tester_URLValidation_PASSED"    OUTPUT FAILED FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Tester_URLValidation_FAILED"
+# -------------------------------------------------------------------------
+INCLUDE [    set macroLine "MACRO $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeKeeper_2_00d0155a_bc74_4cab_bd6d_0a17cdaa426e0_LIST_EXP ";    foreach attr [split "dataLayers<opencurly><closecurly>"] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF {*} TeeFactory    FACTORY_NAME $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeKeeper_2    INPUT  FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Tester_URLValidation_PASSED"    OUTPUT { FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeKeeper_2_OUTPUT"        @KeepAttributes(fme_encoded,uuidjoinkey,fme_pcre_match,"^fme_$($(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeKeeper_2_00d0155a_bc74_4cab_bd6d_0a17cdaa426e0_LIST_EXP)")         }
 # -------------------------------------------------------------------------
 FACTORY_DEF * ElementFactory    FACTORY_NAME $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_ListExploder_2    INPUT  FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeKeeper_2_OUTPUT"    LIST_NAME "dataLayers{}"    ELEMENT_NUMBER_FIELD "_element_index"    CLONE_GEOMETRY    ATTR_ACCUM_MODE "HANDLE_CONFLICT"    ATTR_CONFLICT_RES "INCOMING_IF_CONFLICT"    INCOMING_PREFIX "<Unused>"    OUTPUT ELEMENT FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_ListExploder_2_ELEMENTS"         @RemoveAttributes(ElementFactory.baseCloned)    OUTPUT NOLIST FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_ListExploder_2_<REJECTED>"         @RemoveAttributes(ElementFactory.baseCloned)         fme_rejection_code MISSING_PARAMETER_LIST
 # -------------------------------------------------------------------------
-FACTORY_DEF * TestFactory    FACTORY_NAME $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Tester    INPUT  FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_ListExploder_2_ELEMENTS"    TEST "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>layerid<closeparen>,$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Tester)" != "" ENCODED    BOOLEAN_OPERATOR OR    COMPOSITE_TEST_EXPR "1"    OUTPUT PASSED FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Tester_PASSED"
+FACTORY_DEF * TestFactory    FACTORY_NAME $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Tester    INPUT  FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_ListExploder_2_ELEMENTS"    TEST "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>layerid<closeparen>,$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Tester)" != "" ENCODED    BOOLEAN_OPERATOR OR    COMPOSITE_TEST_EXPR "1"    OUTPUT PASSED FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Tester_PASSED"    OUTPUT FAILED FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Tester_FAILED"
+# -------------------------------------------------------------------------
+# The default behaviour is to abort on any feature entering the transformer.
+# If Workbench has set the _WB_BYPASS_TERMINATION macro to a value of "Yes",
+# then the features will instead be passed through with a feature type of
+# __WB_BYPASS_TERMINATOR__, which Workbench will send to a visualizer or
+# somesuch.
+DEFAULT_MACRO _WB_BYPASS_TERMINATION No
+FACTORY_DEF * TestFactory    FACTORY_NAME $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Terminator    INPUT  FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Tester_FAILED"    TEST "$(_WB_BYPASS_TERMINATION)" == Yes    OUTPUT PASSED FEATURE_TYPE __WB_BYPASS_TERMINATOR__       @SupplyAttributes(_wb_termination_feature_type,@FeatureType())       @SupplyAttributes(ENCODED,_wb_termination_message,"Translation<space>Terminated")       @SupplyAttributes(_wb_termination_xformer,"$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Terminator")       @SupplyAttributes(_wb_termination_feature,Yes)    OUTPUT FAILED FEATURE_TYPE * @Abort(ENCODED,"Translation<space>Terminated")
 # -------------------------------------------------------------------------
 Tcl2 proc $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_StringConcatenator_evaluator {} {    if {{OUTGOING} == {OUTGOING}} {      set attr [FME_DecodeText {GeoAPIEndpoint}];      if {[string length $attr] == 0} { return; };      set attrs [list [FME_EncodeText $attr]];    } else {      set attrAll {<Unused>};      if {[string length $attrAll] == 0} { return; };      set attrs [split {<Unused>} { }];    };    set parmList {{EvaluateExpression} {ATTR_CREATE_EXPR_PROPOGATE_MISSING_FDIV}};    foreach attr $attrs {     lappend parmList $attr;     lappend parmList {"$($(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_DOMAIN$encode)<solidus>resources<solidus><at>Value<openparen>layerid<closeparen>.geojson"};    };    lappend parmList {$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_StringConcatenator};    eval FME_Execute $parmList; }
 FACTORY_DEF * TeeFactory    FACTORY_NAME $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_StringConcatenator    INPUT  FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Tester_PASSED"    OUTPUT FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_StringConcatenator_OUTPUT"         @Tcl2("$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_StringConcatenator_evaluator ")
@@ -1690,8 +1844,10 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSP
 FME_PYTHON_PATH "$(FME_MF_DIR)"
 FACTORY_DEF * PythonFactory    FACTORY_NAME $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_PythonCaller    INPUT  FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_JSONExtractor_EVALUATED"    SYMBOL_NAME processFeature    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fme<comma><space>fmeobjects<comma><space>json<lf>#<space>Template<space>Function<space>interface:<lf>#<space>When<space>using<space>this<space>function<comma><space>make<space>sure<space>its<space>name<space>is<space>set<space>as<space>the<space>value<space>of<lf>#<space>the<space><apos>Class<space>or<space>Function<space>to<space>Process<space>Features<apos><space>transformer<space>parameter<lf>def<space>processFeature<openparen>feature<closeparen>:<lf><space><space><space><space>list<space>=<space>feature.getAttribute<openparen><apos>coordinatestring<apos><closeparen><lf><space><space><space><space>actualList<space>=<space>json.loads<openparen>list<closeparen><lf><space><space><space><space>longitudes<space>=<space><openbracket>float<openparen>x<openbracket>0<closebracket><closeparen><space>for<space>x<space>in<space>actualList<closebracket><lf><space><space><space><space>latitudes<space>=<space><openbracket>float<openparen>x<openbracket>1<closebracket><closeparen><space>for<space>x<space>in<space>actualList<closebracket><lf><space><space><space><space>feature.setAttribute<openparen><apos>south_bound_latitudes<apos><comma>min<openparen>latitudes<closeparen><closeparen><lf><space><space><space><space>feature.setAttribute<openparen><apos>north_bound_latitudes<apos><comma>max<openparen>latitudes<closeparen><closeparen><lf><space><space><space><space>feature.setAttribute<openparen><apos>west_bound_longitudes<apos><comma>min<openparen>longitudes<closeparen><closeparen><lf><space><space><space><space>feature.setAttribute<openparen><apos>east_bound_longitudes<apos><comma>max<openparen>longitudes<closeparen><closeparen><lf><space><space><space><space><lf><space><space><space><space>    OUTPUT PYOUTPUT FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_PythonCaller_OUTPUT"
 # -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Junction_3    INPUT  FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_UUIDGenerator_2_OUTPUT_0_Tmd5Sjj+6+k="    INPUT  FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Tester_URLValidation_FAILED"    OUTPUT FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Junction_3_Output"
+# -------------------------------------------------------------------------
 INCLUDE [if { {ATTRIBUTES} == {ATTRIBUTES} } {                puts "MACRO $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO ATTRIBUTES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_AND_ATTR_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_AND_ATTR_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} } {                puts "MACRO $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} } {                puts "MACRO $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          else {}; ]
-FACTORY_DEF {*} ReferenceFactory    FACTORY_NAME $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2    FLUSH_WHEN_GROUPS_CHANGE No    INPUT REFERENCER FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_UUIDGenerator_2_OUTPUT_0_Tmd5Sjj+6+k="    INPUT REFERENCEE FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_PythonCaller_OUTPUT"    REFERENCE_INFO $($(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO)    REFERENCE_TABLE @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>uuidjoinkey<closeparen>,$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2) @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>uuidjoinkey<closeparen>,$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2) AUTO    ATTR_ACCUM_MODE "HANDLE_CONFLICT"    ATTR_CONFLICT_RES "REQUESTOR_IF_CONFLICT"    IGNORE_NULLS "No"    HANDLE_NULL_MISSING_KEYS_LIKE_FME2013 No    LIST_NAME "dataLayers"    LIST_ATTRS_TO_INCLUDE { east_bound_longitudes geomcol geomtype name north_bound_latitudes south_bound_latitudes west_bound_longitudes layerid }    LIST_ATTRS_TO_INCLUDE_MODE SELECTED    MERGE_ATTRIBUTES Yes    MANAGE_FME_TYPE Yes    MODE COMPLETE    PROCESS_DUPLICATE_REFERENCEES NO    REFERENCEES_FIRST No    REJECT_INVALID_GEOM YES    CLEANING_TOLERANCE <Unused>    OUTPUT COMPLETE FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2_MERGED"    OUTPUT INCOMPLETE FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2_UNMERGED_REQUESTOR"
+FACTORY_DEF {*} ReferenceFactory    FACTORY_NAME $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2    FLUSH_WHEN_GROUPS_CHANGE No    INPUT REFERENCER FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Junction_3_Output"    INPUT REFERENCEE FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_PythonCaller_OUTPUT"    REFERENCE_INFO $($(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO)    REFERENCE_TABLE @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>uuidjoinkey<closeparen>,$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2) @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>uuidjoinkey<closeparen>,$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2) AUTO    ATTR_ACCUM_MODE "HANDLE_CONFLICT"    ATTR_CONFLICT_RES "REQUESTOR_IF_CONFLICT"    IGNORE_NULLS "No"    HANDLE_NULL_MISSING_KEYS_LIKE_FME2013 No    LIST_NAME "dataLayers"    LIST_ATTRS_TO_INCLUDE { east_bound_longitudes geomcol geomtype name north_bound_latitudes south_bound_latitudes west_bound_longitudes layerid }    LIST_ATTRS_TO_INCLUDE_MODE SELECTED    MERGE_ATTRIBUTES Yes    MANAGE_FME_TYPE Yes    MODE COMPLETE    PROCESS_DUPLICATE_REFERENCEES NO    REFERENCEES_FIRST No    REJECT_INVALID_GEOM YES    CLEANING_TOLERANCE <Unused>    OUTPUT COMPLETE FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2_MERGED"    OUTPUT INCOMPLETE FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2_UNMERGED_REQUESTOR"
 # -------------------------------------------------------------------------
 FACTORY_DEF * TeeFactory    FACTORY_NAME $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeExposer    INPUT  FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_Junction_Output"    INPUT  FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_FeatureMerger_2_UNMERGED_REQUESTOR"    OUTPUT FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeExposer_OUTPUT"
 # -------------------------------------------------------------------------
@@ -1711,5 +1867,5 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSP
 # -------------------------------------------------------------------------
 INCLUDE [    set macroLine "MACRO $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeRemover_6_LIST_EXP ";    foreach attr [split "dataLayers<opencurly><closecurly>.east_bound_longitudes dataLayers<opencurly><closecurly>.north_bound_latitudes dataLayers<opencurly><closecurly>.south_bound_latitudes dataLayers<opencurly><closecurly>.west_bound_longitudes"] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
 FACTORY_DEF {*} TeeFactory    FACTORY_NAME $(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeRemover_6    INPUT  FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_ListRangeExtractor_4_OUTPUT"    OUTPUT { FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeRemover_6_OUTPUT"        @RemoveAttributes(fme_encoded,coordinatestring,bbox_json,uuidjoinkey)        @RemoveAttributes(fme_pcre_match"$($(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeRemover_6_LIST_EXP)")         }
-FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_feature_output1629925290 Output Collector"   INPUT FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeRemover_6_OUTPUT"   INPUT FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeCreator_OUTPUT"   OUTPUT FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_feature_output"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_feature_output1659451778 Output Collector"   INPUT FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeRemover_6_OUTPUT"   INPUT FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_AttributeCreator_OUTPUT"   OUTPUT FEATURE_TYPE "$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME)_feature_output"
 INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(SOCRATA_BOUNDING_BOX_EXTRACTOR_WORKSPACE_NAME))}]
