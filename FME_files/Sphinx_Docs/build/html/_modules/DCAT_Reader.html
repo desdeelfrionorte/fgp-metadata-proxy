@@ -36,14 +36,25 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
+<li class="toctree-l1"><a class="reference internal" href="../BC_PROD.html">BC_FGP_BUILDER_PROD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NL_PROD.html">NL_FGP_BUILDER_PROD</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Synchronisation_CKAN.html">Synchronisation_CKAN</a></li>
+</ul>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../ATTRIBUTE_MANAGER_NG.html">ATTRIBUTE_MANAGER_NG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ATTRIBUTE_VALUE_TEXT_CLEANER.html">ATTRIBUTE_VALUE_TEXT_CLEANER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AWS_TRANSLATE.html">AWS_TRANSLATE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BC_ATTRIBUTE_FORMATTER.html">BC_ATTRIBUTE_FORMATTER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Catalogue_Reader.html">Catalogue_Reader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../DCAT_Reader.html">DCAT_Reader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../DEFAULT_ATTRIBUTE_MAPPER.html">DEFAULT_ATTRIBUTE_MAPPER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../DEFAULT_ATTRIBUTE_MAPPER_NG.html">DEFAULT_ATTRIBUTE_MAPPER_NG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../DUPLICATE_SERVICE_REMOVER.html">DUPLICATE_SERVICE_REMOVER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../EMAIL_FORMAT_TESTER.html">EMAIL_FORMAT_TESTER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EMPTY_FORMAT_MAPPER.html">EMPTY_FORMAT_MAPPER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EMPTY_FORMAT_MAPPER_NG.html">EMPTY_FORMAT_MAPPER_NG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../EXTRACT_COLLECTION_START_END_DATE.html">EXTRACT_COLLECTION_START_END_DATE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../FORMAT_VALIDATOR.html">FORMAT_VALIDATOR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GEO_EXTENTS_MAPPER.html">GEO_EXTENTS_MAPPER</a></li>
@@ -60,6 +71,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../LICENSE_FILTER_NG.html">LICENSE_FILTER_NG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../LOOKUP_TABLES_READER.html">LOOKUP_TABLES_READER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../LOOKUP_TABLES_READER_NG.html">LOOKUP_TABLES_READER_NG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NL_ATTRIBUTE_EXTRACTOR.html">NL_ATTRIBUTE_EXTRACTOR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NL_CATALOGUE_READER.html">NL_CATALOGUE_READER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NT_CATALOGUE_READER.html">NT_CATALOGUE_READER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MANUAL_GEOSPATIAL_SETTER.html">MANUAL_GEOSPATIAL_SETTER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MAP_RESOURCE_ATTRIBUTION_REMOVER.html">MAP_RESOURCE_ATTRIBUTION_REMOVER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MAP_RESOURCE_ATTRIBUTION_REMOVER_NG.html">MAP_RESOURCE_ATTRIBUTION_REMOVER_NG</a></li>
@@ -122,6 +136,7 @@
 <span class="kn">from</span> <span class="nn">requests.adapters</span> <span class="kn">import</span> <span class="n">HTTPAdapter</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">from</span> <span class="nn">Python.FME_utils</span> <span class="kn">import</span> <span class="n">FME_utils</span>
 
 <span class="k">try</span><span class="p">:</span>
@@ -151,6 +166,10 @@
 
 <span class="c1"># Define http return code</span>
 <span class="n">HTTP_OK</span> <span class="o">=</span> <span class="mi">200</span>
+
+<span class="c1"># Define regex expresion</span>
+<span class="n">REGEX_PATTERN</span> <span class="o">=</span> <span class="s1">&#39;https://(.*?)/[a-z]+/&#39;</span>
+
 
 
 <span class="c1"># Template Class Interface:</span>
@@ -247,15 +266,8 @@
         <span class="k">for</span> <span class="n">json_dataset</span> <span class="ow">in</span> <span class="n">datasets</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="nb">id</span> <span class="o">=</span> <span class="n">json_dataset</span><span class="p">[</span><span class="s2">&quot;identifier&quot;</span><span class="p">]</span>
-                <span class="k">if</span> <span class="s2">&quot;datasets/&quot;</span> <span class="ow">in</span> <span class="nb">id</span><span class="p">:</span>
-                   <span class="n">splitter</span> <span class="o">=</span> <span class="s2">&quot;datasets/&quot;</span>
-                <span class="k">else</span><span class="p">:</span>
-                   <span class="n">splitter</span> <span class="o">=</span> <span class="s2">&quot;maps/&quot;</span>
-                <span class="n">txt_split</span> <span class="o">=</span> <span class="nb">id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">splitter</span><span class="p">)</span>
-                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">txt_split</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-                   <span class="n">dcat_id</span> <span class="o">=</span> <span class="n">txt_split</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-                <span class="k">else</span><span class="p">:</span>
-                   <span class="n">dcat_id</span> <span class="o">=</span> <span class="n">DCAT_ID_UNKNOWN</span>  <span class="c1"># Unable to extract the ID</span>
+                <span class="n">dcat_id</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">REGEX_PATTERN</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">)</span>
+
                 <span class="n">str_json_dataset</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">json_dataset</span><span class="p">)</span>  <span class="c1"># From JSON to string</span>
                 <span class="n">lst_key_val_att</span> <span class="o">=</span> <span class="p">[(</span><span class="n">DCAT_P_IDENTIFIER</span><span class="p">,</span> <span class="n">dcat_id</span><span class="p">),</span> 
                                    <span class="p">(</span><span class="n">STATUS_CODE</span><span class="p">,</span> <span class="n">HTTP_OK</span><span class="p">),</span> 

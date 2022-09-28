@@ -36,14 +36,25 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
+<li class="toctree-l1"><a class="reference internal" href="../BC_PROD.html">BC_FGP_BUILDER_PROD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NL_PROD.html">NL_FGP_BUILDER_PROD</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Synchronisation_CKAN.html">Synchronisation_CKAN</a></li>
+</ul>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../ATTRIBUTE_MANAGER_NG.html">ATTRIBUTE_MANAGER_NG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ATTRIBUTE_VALUE_TEXT_CLEANER.html">ATTRIBUTE_VALUE_TEXT_CLEANER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AWS_TRANSLATE.html">AWS_TRANSLATE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BC_ATTRIBUTE_FORMATTER.html">BC_ATTRIBUTE_FORMATTER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Catalogue_Reader.html">Catalogue_Reader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../DCAT_Reader.html">DCAT_Reader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../DEFAULT_ATTRIBUTE_MAPPER.html">DEFAULT_ATTRIBUTE_MAPPER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../DEFAULT_ATTRIBUTE_MAPPER_NG.html">DEFAULT_ATTRIBUTE_MAPPER_NG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../DUPLICATE_SERVICE_REMOVER.html">DUPLICATE_SERVICE_REMOVER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../EMAIL_FORMAT_TESTER.html">EMAIL_FORMAT_TESTER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EMPTY_FORMAT_MAPPER.html">EMPTY_FORMAT_MAPPER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EMPTY_FORMAT_MAPPER_NG.html">EMPTY_FORMAT_MAPPER_NG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../EXTRACT_COLLECTION_START_END_DATE.html">EXTRACT_COLLECTION_START_END_DATE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../FORMAT_VALIDATOR.html">FORMAT_VALIDATOR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GEO_EXTENTS_MAPPER.html">GEO_EXTENTS_MAPPER</a></li>
@@ -60,6 +71,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../LICENSE_FILTER_NG.html">LICENSE_FILTER_NG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../LOOKUP_TABLES_READER.html">LOOKUP_TABLES_READER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../LOOKUP_TABLES_READER_NG.html">LOOKUP_TABLES_READER_NG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NL_ATTRIBUTE_EXTRACTOR.html">NL_ATTRIBUTE_EXTRACTOR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NL_CATALOGUE_READER.html">NL_CATALOGUE_READER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NT_CATALOGUE_READER.html">NT_CATALOGUE_READER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MANUAL_GEOSPATIAL_SETTER.html">MANUAL_GEOSPATIAL_SETTER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MAP_RESOURCE_ATTRIBUTION_REMOVER.html">MAP_RESOURCE_ATTRIBUTION_REMOVER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MAP_RESOURCE_ATTRIBUTION_REMOVER_NG.html">MAP_RESOURCE_ATTRIBUTION_REMOVER_NG</a></li>
@@ -119,13 +133,17 @@
 <span class="kn">import</span> <span class="nn">traceback</span>
 <span class="kn">import</span> <span class="nn">urllib3</span>
 <span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="kn">import</span> <span class="nn">lxml</span>
 <span class="kn">from</span> <span class="nn">ftplib</span> <span class="kn">import</span> <span class="n">FTP</span><span class="p">,</span> <span class="n">FTP_TLS</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">NamedTuple</span>
 <span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlparse</span>
 <span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">unquote</span>
 <span class="kn">from</span> <span class="nn">urllib3.util.retry</span> <span class="kn">import</span> <span class="n">Retry</span>
+<span class="kn">from</span> <span class="nn">urllib3.exceptions</span> <span class="kn">import</span> <span class="n">InsecureRequestWarning</span>
 <span class="kn">from</span> <span class="nn">requests.adapters</span> <span class="kn">import</span> <span class="n">HTTPAdapter</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">fme</span>
     <span class="kn">import</span> <span class="nn">fmeobjects</span>
@@ -146,7 +164,9 @@
 <span class="n">STATUS_CODE_DESCRIPTION</span> <span class="o">=</span> <span class="s2">&quot;_status_code_description&quot;</span>
 
 <span class="c1"># Define HTTP OK return code</span>
-<span class="n">HTTP_OK</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">HTTP_OK</span> <span class="o">=</span> <span class="mi">200</span>  <span class="c1"># Satus OK</span>
+<span class="n">HTTP_MOVED</span> <span class="o">=</span> <span class="mi">301</span>  <span class="c1"># Status moved permanetly</span>
+<span class="n">HTTP_REDIRECTION</span> <span class="o">=</span> <span class="mi">302</span>  <span class="c1"># URL redirection</span>
 
 <span class="c1"># The general timeout used by the http requests</span>
 <span class="n">TIMEOUT</span> <span class="o">=</span> <span class="mi">5</span>
@@ -226,6 +246,49 @@
 
 <div class="viewcode-block" id="FME_utils"><a class="viewcode-back" href="../FME_utils.html#FME_utils.FME_utils">[docs]</a><span class="k">class</span> <span class="nc">FME_utils</span><span class="p">:</span>
     
+<div class="viewcode-block" id="FME_utils.extract_url_html"><a class="viewcode-back" href="../FME_utils.html#FME_utils.FME_utils.extract_url_html">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">extract_url_html</span><span class="p">(</span><span class="n">url_to_read</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This method reads the html source code from a website.</span>
+<span class="sd">        </span>
+<span class="sd">        The method will also pass the html source code into BeautifulSoup</span>
+<span class="sd">        in order to correct badly (when possible) badly formed html source code.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        url_to_read : str</span>
+<span class="sd">            URL address to read.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            The html source code read from the url.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">logger</span> <span class="o">=</span> <span class="n">fmeobjects</span><span class="o">.</span><span class="n">FMELogFile</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">logMessageString</span><span class="p">(</span><span class="s2">&quot;HTTP call: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url_to_read</span><span class="p">),</span> <span class="n">fmeobjects</span><span class="o">.</span><span class="n">FME_INFORM</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url_to_read</span><span class="p">)</span>
+            <span class="n">html_str</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">logMessageString</span><span class="p">(</span><span class="s2">&quot;Unable to read the URL: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url_to_read</span><span class="p">),</span> <span class="n">fmeobjects</span><span class="o">.</span><span class="n">FME_ERROR</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">Exception</span>
+            
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># First try to parse the html code with html.parser</span>
+            <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_str</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+            <span class="n">xhtml_str</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">prettify</span><span class="p">()</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1"># Second try to parse the html with lxml</span>
+                <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_str</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+                <span class="n">xhtml_str</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">prettify</span><span class="p">()</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">logMessageString</span><span class="p">(</span><span class="s2">&quot;Unable to parse the html source code from: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url_to_read</span><span class="p">),</span> <span class="n">fmeobjects</span><span class="o">.</span><span class="n">FME_ERROR</span><span class="p">)</span>
+                <span class="n">xhtml_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+                
+        <span class="k">return</span> <span class="n">xhtml_str</span></div>
+    
 <div class="viewcode-block" id="FME_utils.extract_attribute_list"><a class="viewcode-back" href="../FME_utils.html#FME_utils.FME_utils.extract_attribute_list">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">extract_attribute_list</span><span class="p">(</span><span class="n">feature</span><span class="p">,</span> <span class="n">att_name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;This method extracts a subset of the attributes of a feature.</span>
@@ -263,8 +326,12 @@
         <span class="n">regex_index</span> <span class="o">=</span> <span class="s2">&quot;\d+&quot;</span>
 
         <span class="k">if</span> <span class="n">att_name</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-            <span class="c1"># The attribute to search is a list</span>
-            <span class="n">att_name</span> <span class="o">=</span> <span class="s2">&quot;^&quot;</span> <span class="o">+</span> <span class="n">att_name</span> <span class="o">+</span> <span class="s2">&quot;$&quot;</span>  <span class="c1"># Regular expression exact match</span>
+            <span class="k">if</span> <span class="n">att_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">):</span>
+                <span class="c1"># Search for all the attributes of a list (ex.: resources{})</span>
+                <span class="n">att_name</span> <span class="o">=</span> <span class="s2">&quot;^&quot;</span> <span class="o">+</span> <span class="n">att_name</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Search for specific attributes of a list (ex.: resources{}.name)</span>
+                <span class="n">att_name</span> <span class="o">=</span> <span class="s2">&quot;^&quot;</span> <span class="o">+</span> <span class="n">att_name</span> <span class="o">+</span> <span class="s2">&quot;$&quot;</span>
             <span class="n">regex_search</span> <span class="o">=</span> <span class="n">att_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">regex_list</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">feature_att</span> <span class="ow">in</span> <span class="n">feature_atts</span><span class="p">:</span>
                 <span class="n">att_lst</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">regex_search</span> <span class="p">,</span> <span class="n">feature_att</span><span class="p">)</span>  <span class="c1"># Check if attribute name is present</span>
@@ -869,6 +936,61 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span></div>
 
+<div class="viewcode-block" id="FME_utils.http_get_url_mime_type"><a class="viewcode-back" href="../FME_utils.html#FME_utils.FME_utils.http_get_url_mime_type">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">http_get_url_mime_type</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Makes a requests on the header of the url address to extract the MIME-type.</span>
+<span class="sd">        </span>
+<span class="sd">        If the MIME-type is absent and the status code of the URL reuest is valid, a get request is done </span>
+<span class="sd">        on the URL address and it validates if the URL content starts with &#39;&lt;!DOCTYPE html&gt;&#39; the MIME-type</span>
+<span class="sd">        is set to &#39;text/html&#39;.</span>
+<span class="sd">        </span>
+<span class="sd">        The method will set the MIME-type to None if it cannot determine the MIME-type of the URL.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        url : String</span>
+<span class="sd">            The current url to check</span>
+<span class="sd">        </span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        mime_type String</span>
+<span class="sd">            The MIME-type of the URL address or None if the MIME-type cannot be determined</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">content_type</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Set default value</span>
+        <span class="n">logger</span> <span class="o">=</span> <span class="n">fmeobjects</span><span class="o">.</span><span class="n">FMELogFile</span><span class="p">()</span>  <span class="c1"># Create a logger</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Suppress warning</span>
+            <span class="n">requests</span><span class="o">.</span><span class="n">packages</span><span class="o">.</span><span class="n">urllib3</span><span class="o">.</span><span class="n">disable_warnings</span><span class="p">(</span><span class="n">category</span><span class="o">=</span><span class="n">InsecureRequestWarning</span><span class="p">)</span>
+            
+            <span class="c1"># Make a head request to get only the header (not the content)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">TIMEOUT</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">status_code</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;HTTP call -- Status code: </span><span class="si">{0}</span><span class="s2">; URL </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">status_code</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">logMessageString</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">fmeobjects</span><span class="o">.</span><span class="n">FME_INFORM</span><span class="p">)</span>
+            
+            <span class="n">headers</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">headers</span>
+            <span class="n">content_type</span> <span class="o">=</span> <span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;content-type&quot;</span><span class="p">)</span>                
+            <span class="k">if</span> <span class="n">content_type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="c1"># If content-type is empty try to read the data and check if it&#39;s an HTML document</span>
+                <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Range&quot;</span><span class="p">:</span> <span class="s2">&quot;bytes=0-25&quot;</span><span class="p">}</span>  <span class="c1"># Request a range if server can handle it (faster)</span>
+                <span class="n">request</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">TIMEOUT</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">text</span>
+                <span class="k">if</span> <span class="s1">&#39;&lt;!DOCTYPE html&#39;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">]:</span>
+                    <span class="n">content_type</span> <span class="o">=</span> <span class="s2">&quot;text/html&quot;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># Not an HTML document.</span>
+                    <span class="k">pass</span>
+
+        <span class="k">except</span><span class="p">:</span>
+            <span class="c1"># An error has occured nothing to do </span>
+            <span class="k">pass</span>
+            
+        <span class="k">return</span> <span class="n">content_type</span></div>
+        
+    
 <div class="viewcode-block" id="FME_utils.http_check_url_request_options"><a class="viewcode-back" href="../FME_utils.html#FME_utils.FME_utils.http_check_url_request_options">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">http_check_url_request_options</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -884,10 +1006,10 @@
 <span class="sd">        Request object or None</span>
 <span class="sd">            The request object when successfully got a response of any kind or None when the request failed.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-
+        <span class="c1">#web_pdb.set_trace()</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="c1"># Requests the head of the url</span>
-            <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">TIMEOUT</span><span class="p">)</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">TIMEOUT</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="n">r</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
             <span class="k">return</span> <span class="n">r</span>
 

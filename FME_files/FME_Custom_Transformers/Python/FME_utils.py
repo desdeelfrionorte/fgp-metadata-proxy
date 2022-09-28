@@ -4,13 +4,17 @@ import sys, os
 import traceback
 import urllib3
 import yaml
+import urllib.request
+import lxml
 from ftplib import FTP, FTP_TLS
 from typing import NamedTuple
 from urllib.parse import urlparse
 from urllib.parse import unquote
 from urllib3.util.retry import Retry
+from urllib3.exceptions import InsecureRequestWarning
 from requests.adapters import HTTPAdapter
 from datetime import datetime
+from bs4 import BeautifulSoup
 try:
     import fme
     import fmeobjects
@@ -31,7 +35,9 @@ STATUS_CODE = "_status_code"
 STATUS_CODE_DESCRIPTION = "_status_code_description"
 
 # Define HTTP OK return code
-HTTP_OK = 200
+HTTP_OK = 200  # Satus OK
+HTTP_MOVED = 301  # Status moved permanetly
+HTTP_REDIRECTION = 302  # URL redirection
 
 # The general timeout used by the http requests
 TIMEOUT = 5
@@ -112,6 +118,49 @@ class CsvGeoSpatialValidation(NamedTuple):
 class FME_utils:
     
     @staticmethod
+    def extract_url_html(url_to_read):
+        """This method reads the html source code from a website.
+        
+        The method will also pass the html source code into BeautifulSoup
+        in order to correct badly (when possible) badly formed html source code.
+        
+        Parameters
+        ----------
+        url_to_read : str
+            URL address to read.
+        
+        Returns
+        -------
+        str
+            The html source code read from the url.
+        """
+        
+        logger = fmeobjects.FMELogFile()
+        try:
+            logger.logMessageString("HTTP call: {0}".format(url_to_read), fmeobjects.FME_INFORM)
+            response = urllib.request.urlopen(url_to_read)
+            html_str = response.read()
+        except:
+            logger.logMessageString("Unable to read the URL: {}".format(url_to_read), fmeobjects.FME_ERROR)
+            raise Exception
+            
+
+        try:
+            # First try to parse the html code with html.parser
+            soup = BeautifulSoup(html_str, "html.parser")
+            xhtml_str = soup.prettify()
+        except:
+            try:
+                # Second try to parse the html with lxml
+                soup = BeautifulSoup(html_str, "lxml")
+                xhtml_str = soup.prettify()
+            except:
+                logger.logMessageString("Unable to parse the html source code from: {}".format(url_to_read), fmeobjects.FME_ERROR)
+                xhtml_str = ""
+                
+        return xhtml_str
+    
+    @staticmethod
     def extract_attribute_list(feature, att_name):
         """This method extracts a subset of the attributes of a feature.
         
@@ -148,8 +197,12 @@ class FME_utils:
         regex_index = "\d+"
 
         if att_name.find("{}") != -1:
-            # The attribute to search is a list
-            att_name = "^" + att_name + "$"  # Regular expression exact match
+            if att_name.endswith("{}"):
+                # Search for all the attributes of a list (ex.: resources{})
+                att_name = "^" + att_name
+            else:
+                # Search for specific attributes of a list (ex.: resources{}.name)
+                att_name = "^" + att_name + "$"
             regex_search = att_name.replace("{}", regex_list)
             for feature_att in feature_atts:
                 att_lst = re.match(regex_search , feature_att)  # Check if attribute name is present
@@ -755,6 +808,61 @@ class FME_utils:
             return None
 
     @staticmethod
+    def http_get_url_mime_type(url):
+        """
+        Makes a requests on the header of the url address to extract the MIME-type.
+        
+        If the MIME-type is absent and the status code of the URL reuest is valid, a get request is done 
+        on the URL address and it validates if the URL content starts with '<!DOCTYPE html>' the MIME-type
+        is set to 'text/html'.
+        
+        The method will set the MIME-type to None if it cannot determine the MIME-type of the URL.
+        
+        Parameters
+        ----------
+        url : String
+            The current url to check
+        
+        Returns
+        -------
+        mime_type String
+            The MIME-type of the URL address or None if the MIME-type cannot be determined
+        """
+        
+        content_type = None  # Set default value
+        logger = fmeobjects.FMELogFile()  # Create a logger
+        
+        try:
+            # Suppress warning
+            requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
+            
+            # Make a head request to get only the header (not the content)
+            response = requests.head(url, timeout=TIMEOUT, verify=False)
+            status_code = response.status_code
+            text = "HTTP call -- Status code: {0}; URL {1}".format(status_code, url)
+            logger.logMessageString(text, fmeobjects.FME_INFORM)
+            
+            headers = response.headers
+            content_type = headers.get("content-type")                
+            if content_type is None:
+                # If content-type is empty try to read the data and check if it's an HTML document
+                headers = {"Range": "bytes=0-25"}  # Request a range if server can handle it (faster)
+                request = requests.get(url,headers=headers, timeout=TIMEOUT, verify=False)
+                text = request.text
+                if '<!DOCTYPE html' in text[0:20]:
+                    content_type = "text/html"
+                else:
+                    # Not an HTML document.
+                    pass
+
+        except:
+            # An error has occured nothing to do 
+            pass
+            
+        return content_type
+        
+    
+    @staticmethod
     def http_check_url_request_options(url):
         """
         Makes a call on the provided url using the OPTIONS method.
@@ -769,10 +877,10 @@ class FME_utils:
         Request object or None
             The request object when successfully got a response of any kind or None when the request failed.
         """
-
+        #web_pdb.set_trace()
         try:
             # Requests the head of the url
-            r = requests.options(url, timeout=TIMEOUT)
+            r = requests.options(url, timeout=TIMEOUT, verify=False, allow_redirects=True)
             r.close()
             return r
 

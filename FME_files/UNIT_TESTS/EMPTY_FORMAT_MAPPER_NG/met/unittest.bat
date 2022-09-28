@@ -44,28 +44,31 @@ PUSHD %Repertoire%\..
 
 REM Define sources
 
-REM FME call
+
+REM First FME call,creating FFS File with seven data records, three of which have incorrect email formats
 set test_number=1
 SET source=met\source%test_number%.ffs
 set etalon=met\etalon%test_number%.ffs
 set resultat=met\resultat%test_number%.ffs
-set feature_type=Format
-set csv_mime_type=Mime_type
-set in_csv_lookup_tables_dir=.\met
-set pt_abbr=SK
 set log=met\log_%test_number%.log
 set log_comp=met\log_comp_%test_number%.log
---IN_FFS_FILE %source% ^
---OUT_FFS_FILE %resultat% ^
+set csv_format=Format
+set csv_mime_type=Mime_type
+set in_csv_lookup_tables_dir=.\met
+set pt_abbr=ON
+set url_validation=No
 
 IF EXIST %log% del %log%
-%fme% met\metrique_%NomApp%.fmw ^
+IF EXIST met\resultat.ffs DEL met\resultat.ffs
+%fme% met\metrique_empty_format_mapper_ng.fmw ^
 --IN_FFS_FILE %source% ^
 --OUT_FFS_FILE %resultat% ^
---FEATURE_TYPE %feature_type% ^
+--LOG_FILE %log% ^
+--CSV_FORMAT %csv_format% ^
+--CSV_MIME_TYPE %csv_mime_type% ^
 --IN_CSV_LOOKUP_TABLES_DIR %in_csv_lookup_tables_dir% ^
 --P-T_ABBR %pt_abbr% ^
---LOG_FILE %log%
+--URL_VALIDATION %url_validation%
 SET Statut=%Statut%%ERRORLEVEL%
 
 REM Comparison with the standard

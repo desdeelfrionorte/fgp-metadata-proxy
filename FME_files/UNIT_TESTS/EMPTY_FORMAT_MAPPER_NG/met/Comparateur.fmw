@@ -1,10 +1,10 @@
 #! <?xml version="1.0" encoding="UTF-8" ?>
 #! <WORKSPACE
 #    Command-line to run this workspace:
-#        "C:\Program Files (x86)\fme\fme2020.0_b20200\fme.exe" C:\DavidH\NRCan\fgp-metadata-proxy\FME_files\UNIT_TESTS\EMPTY_FORMAT_MAPPER_NG\met\Comparateur.fmw
-#              --LOG_FILE ""
-#              --IN_ETALON_FILE "etalon1.ffs"
-#              --IN_RESULTAT_FILE "resultat1.ffs"
+#        "C:\Program Files (x86)\fme\fme2020.0_b20200\fme.exe" C:\DATA\FGP_GITHUB\fgp-metadata-proxy\FME_files\UNIT_TESTS\EMPTY_FORMAT_MAPPER_NG\met\Comparateur.fmw
+#              --LOG_FILE "log_diff"
+#              --IN_ETALON_FILE "C:\DATA\FGP_GITHUB\fgp-metadata-proxy\FME_files\UNIT_TESTS\EMPTY_FORMAT_MAPPER_NG\met\etalon.ffs"
+#              --IN_RESULTAT_FILE "C:\DATA\FGP_GITHUB\fgp-metadata-proxy\FME_files\UNIT_TESTS\EMPTY_FORMAT_MAPPER_NG\met\resultat.ffs"
 #    
 #!   ATTR_TYPE_ENCODING="SDF"
 #!   BEGIN_PYTHON=""
@@ -19,8 +19,8 @@
 #!   END_TCL=""
 #!   EXPLICIT_BOOKMARK_ORDER="false"
 #!   FME_BUILD_NUM="20200"
-#!   FME_DOCUMENT_GUID="0f940d43-f950-4c83-b610-584def25b865"
-#!   FME_DOCUMENT_PRIORGUID="48a6cdcd-8c33-4d48-8291-1d6fb7b492b1,dfea3934-453c-42ad-8a74-0bd36935346c,0a70fdc8-09d0-419c-80a0-6aaeb599206d,095e5763-4d9e-4c37-a3a1-04b569731507,a445ea9c-37e9-486f-b1e0-849201ce7294,1c6d7205-62e1-4c5a-8a7d-cc072c87f5ce,b64b8f13-a773-4fc4-8f54-872e4ab4b5bd,9620312d-e740-4958-8a74-18c41845e569,60f813e2-35a6-4a1c-a764-83fefe317048"
+#!   FME_DOCUMENT_GUID="fd130cee-7397-4528-a95d-a6320ede30f3"
+#!   FME_DOCUMENT_PRIORGUID="48a6cdcd-8c33-4d48-8291-1d6fb7b492b1,dfea3934-453c-42ad-8a74-0bd36935346c,0a70fdc8-09d0-419c-80a0-6aaeb599206d,095e5763-4d9e-4c37-a3a1-04b569731507,a445ea9c-37e9-486f-b1e0-849201ce7294,1c6d7205-62e1-4c5a-8a7d-cc072c87f5ce,d939ed88-c548-4d45-a4c7-fb452ea8403b,1764b6e0-af7f-47a8-aed0-85fd99289a70,cdf29a7b-71ed-4cf9-8da9-bcf66fd0e460"
 #!   FME_GEOMETRY_HANDLING="Enhanced"
 #!   FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Auto"
 #!   FME_REPROJECTION_ENGINE="FME"
@@ -29,7 +29,7 @@
 #!   HISTORY=""
 #!   IGNORE_READER_FAILURE="No"
 #!   LAST_SAVE_BUILD="FME(R) 2020.0.0.0 (20200309 - Build 20200 - WIN32)"
-#!   LAST_SAVE_DATE="2022-08-04T16:48:54"
+#!   LAST_SAVE_DATE="2022-06-29T16:06:06"
 #!   LOG_FILE="$(LOG_FILE)"
 #!   LOG_MAX_RECORDED_FEATURES="200"
 #!   MARKDOWN_DESCRIPTION=""
@@ -48,7 +48,7 @@
 #!   TITLE=""
 #!   USAGE=""
 #!   USE_MARKDOWN=""
-#!   VIEW_POSITION="756.258 590.631"
+#!   VIEW_POSITION="756.258 571.881"
 #!   WARN_INVALID_XFORM_PARAM="Yes"
 #!   WORKSPACE_VERSION="1"
 #!   ZOOM_SCALE="100"
@@ -67,7 +67,7 @@
 #!   WRITE_DEFS="false"
 #!   DEFLINE_TEMPLATE=""
 #!   DEFLINE_ATTRS="true"
-#!   EXPOSABLE_ATTRS="fme_rotation real64 fme_feature_type char(50) fme_color char(50) fme_text_string char(50) fme_geometry fme_char(50) multi_reader_type char(50) multi_reader_full_id int32 fme_text_size real64 fme_secondary_axis real64 fme_start_angle real64 multi_reader_keyword char(50) fme_sweep_angle real64 fme_fill_color char(50) multi_reader_id int32 fme_dataset char(50) fme_type char(50) fme_basename char(50) fme_primary_axis real64"
+#!   EXPOSABLE_ATTRS="fme_geometry fme_char(50) fme_sweep_angle real64 multi_reader_id int32 fme_feature_type char(50) multi_reader_type char(50) fme_start_angle real64 multi_reader_full_id int32 multi_reader_keyword char(50) fme_text_string char(50) fme_primary_axis real64 fme_dataset char(50) fme_secondary_axis real64 fme_text_size real64 fme_rotation real64 fme_type char(50) fme_basename char(50) fme_fill_color char(50) fme_color char(50)"
 #!   DEFLINE_PARMS=""
 #!   ATTR_INDEX_TYPES=""
 #!   ATTR_NAME_INVALID_CHARS=""
@@ -97,7 +97,7 @@
 #!   WRITE_DEFS="false"
 #!   DEFLINE_TEMPLATE=""
 #!   DEFLINE_ATTRS="true"
-#!   EXPOSABLE_ATTRS="fme_rotation real64 fme_feature_type char(50) fme_color char(50) fme_text_string char(50) fme_geometry fme_char(50) multi_reader_type char(50) multi_reader_full_id int32 fme_text_size real64 fme_secondary_axis real64 fme_start_angle real64 multi_reader_keyword char(50) fme_sweep_angle real64 fme_fill_color char(50) multi_reader_id int32 fme_dataset char(50) fme_type char(50) fme_basename char(50) fme_primary_axis real64"
+#!   EXPOSABLE_ATTRS="fme_geometry fme_char(50) fme_sweep_angle real64 multi_reader_id int32 fme_feature_type char(50) multi_reader_type char(50) fme_start_angle real64 multi_reader_full_id int32 multi_reader_keyword char(50) fme_text_string char(50) fme_primary_axis real64 fme_dataset char(50) fme_secondary_axis real64 fme_text_size real64 fme_rotation real64 fme_type char(50) fme_basename char(50) fme_fill_color char(50) fme_color char(50)"
 #!   DEFLINE_PARMS=""
 #!   ATTR_INDEX_TYPES=""
 #!   ATTR_NAME_INVALID_CHARS=""
@@ -398,14 +398,14 @@
 #!   IS_EDITABLE="false"
 #!   IDENTIFIER="12"
 #!   FEAT_GEOMTYPE="fme_point fme_line fme_area fme_text fme_ellipse fme_arc fme_rectangle fme_rounded_rectangle fme_raster fme_collection fme_surface fme_solid fme_point_cloud fme_no_geom"
-#!   POSITION="1150.6421564215643 279.87434374343741"
-#!   BOUNDING_RECT="1150.6421564215643 279.87434374343741 430 71"
+#!   POSITION="1150.6421564215643 270.49924999249993"
+#!   BOUNDING_RECT="1150.6421564215643 270.49924999249993 430 71"
 #!   ORDER="18"
 #!   COLLAPSED="true"
 #!   KEYWORD="FFS_1"
 #!   PARMS_EDITED="true"
 #!   ENABLED="true"
-#!   HIDDEN_USER_ATTRS=""
+#!   HIDDEN_USER_ATTRS="PRECISION SNRC SHAPE_GEOMETRY TYPE_LAC CODE_CLASS CODE"
 #!   MERGE_FILTER="*"
 #!   MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
 #!   MERGE_FILTER_CASE_SENSITIVE="false"
@@ -431,14 +431,14 @@
 #!   IS_EDITABLE="false"
 #!   IDENTIFIER="13"
 #!   FEAT_GEOMTYPE="fme_point fme_line fme_area fme_text fme_ellipse fme_arc fme_rectangle fme_rounded_rectangle fme_raster fme_collection fme_surface fme_solid fme_point_cloud fme_no_geom"
-#!   POSITION="1150.6421564215643 -598.37646876468739"
-#!   BOUNDING_RECT="1150.6421564215643 -598.37646876468739 430 71"
+#!   POSITION="1150.6421564215641 -600"
+#!   BOUNDING_RECT="1150.6421564215641 -600 430 71"
 #!   ORDER="19"
 #!   COLLAPSED="true"
 #!   KEYWORD="FFS_2"
 #!   PARMS_EDITED="true"
 #!   ENABLED="true"
-#!   HIDDEN_USER_ATTRS=""
+#!   HIDDEN_USER_ATTRS="PRECISION SNRC SHAPE_GEOMETRY TYPE_LAC Id CODE_CLASS CODE"
 #!   MERGE_FILTER="*"
 #!   MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
 #!   MERGE_FILTER_CASE_SENSITIVE="false"
@@ -463,29 +463,29 @@
 #! <DATASET
 #!   NAME="FFS_1"
 #!   OVERRIDE="-FFS_1_DATASET"
-#!   DATASET="FFS_1/etalon1.ffs"
+#!   DATASET="FFS_1/etalon.ffs"
 #! />
 #! <DATASET
 #!   NAME="FFS_2"
 #!   OVERRIDE="-FFS_2_DATASET"
-#!   DATASET="FFS_2/resultat1.ffs"
+#!   DATASET="FFS_2/resultat.ffs"
 #! />
 #! </READER_DATASETS>
 #! </FMESERVER>
 #! <GLOBAL_PARAMETERS>
 #! <GLOBAL_PARAMETER
 #!   GUI_LINE="GUI OPTIONAL FILENAME LOG_FILE Log_Files_(*.log)|*.log|All_Files_(*.*)|*.* LOG_FILE:"
-#!   DEFAULT_VALUE=""
+#!   DEFAULT_VALUE="log_diff"
 #!   IS_STAND_ALONE="false"
 #! />
 #! <GLOBAL_PARAMETER
 #!   GUI_LINE="GUI FILE_OR_URL IN_ETALON_FILE All_files|*.* IN_ETALON_FILE"
-#!   DEFAULT_VALUE="etalon1.ffs"
+#!   DEFAULT_VALUE="$(FME_MF_DIR)etalon.ffs"
 #!   IS_STAND_ALONE="false"
 #! />
 #! <GLOBAL_PARAMETER
 #!   GUI_LINE="GUI FILE_OR_URL IN_RESULTAT_FILE All_files|*.* IN_RESULTAT_FILE"
-#!   DEFAULT_VALUE="resultat1.ffs"
+#!   DEFAULT_VALUE="$(FME_MF_DIR)resultat.ffs"
 #!   IS_STAND_ALONE="false"
 #! />
 #! </GLOBAL_PARAMETERS>
@@ -585,18 +585,18 @@
 #!   IDENTIFIER="26"
 #!   TYPE="AttributeRemover"
 #!   VERSION="1"
-#!   POSITION="1978.1447814478142 437.50437504375043"
-#!   BOUNDING_RECT="1978.1447814478142 437.50437504375043 431 71"
+#!   POSITION="1987.5198751987518 440.62940629406296"
+#!   BOUNDING_RECT="1987.5198751987518 440.62940629406296 431 71"
 #!   ORDER="500000000000027"
 #!   PARMS_EDITED="true"
 #!   ENABLED="true"
-#!   LAST_PARM_EDIT="18586"
+#!   LAST_PARM_EDIT="20200"
 #! >
 #!     <OUTPUT_FEAT NAME="OUTPUT"/>
 #!     <FEAT_COLLAPSED COLLAPSED="0"/>
 #!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
 #!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="fme_feature_type,multi_reader_full_id,TYPE_LAC,SNRC,multi_reader_type,multi_reader_id,CODE,SHAPE_GEOMETRY,CODE_CLASS,PRECISION,multi_reader_keyword"/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="fme_feature_type,multi_reader_full_id,multi_reader_type,multi_reader_id,multi_reader_keyword"/>
 #!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
 #!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
 #! </TRANSFORMER>
@@ -609,13 +609,13 @@
 #!   ORDER="500000000000027"
 #!   PARMS_EDITED="true"
 #!   ENABLED="true"
-#!   LAST_PARM_EDIT="18586"
+#!   LAST_PARM_EDIT="20200"
 #! >
 #!     <OUTPUT_FEAT NAME="OUTPUT"/>
 #!     <FEAT_COLLAPSED COLLAPSED="0"/>
 #!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
 #!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="fme_feature_type,multi_reader_full_id,Id,TYPE_LAC,SNRC,multi_reader_type,multi_reader_id,CODE,SHAPE_GEOMETRY,CODE_CLASS,PRECISION,multi_reader_keyword"/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="fme_feature_type,multi_reader_full_id,multi_reader_type,multi_reader_id,multi_reader_keyword"/>
 #!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
 #!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover_2"/>
 #! </TRANSFORMER>
@@ -740,11 +740,11 @@
 
 FME_PYTHON_VERSION 37
 GUI IGNORE SourceDataset_FFS_1,FFS_IN_PASSPHRASE_FFS_1,FFS_IN_SEARCH_ENVELOPE_MINX_FFS_1,FFS_IN_SEARCH_ENVELOPE_MINY_FFS_1,FFS_IN_SEARCH_ENVELOPE_MAXX_FFS_1,FFS_IN_SEARCH_ENVELOPE_MAXY_FFS_1,FFS_IN_CLIP_TO_ENVELOPE_FFS_1,SEARCH_ENVELOPE_COORDINATE_SYSTEM_FFS_1,_SEARCH_CLOSEST_POINT_FFS_1,SourceDataset_FFS_2,FFS_IN_PASSPHRASE_FFS_2,FFS_IN_SEARCH_ENVELOPE_MINX_FFS_2,FFS_IN_SEARCH_ENVELOPE_MINY_FFS_2,FFS_IN_SEARCH_ENVELOPE_MAXX_FFS_2,FFS_IN_SEARCH_ENVELOPE_MAXY_FFS_2,FFS_IN_CLIP_TO_ENVELOPE_FFS_2,SEARCH_ENVELOPE_COORDINATE_SYSTEM_FFS_2,_SEARCH_CLOSEST_POINT_FFS_2
-DEFAULT_MACRO LOG_FILE 
+DEFAULT_MACRO LOG_FILE log_diff
 GUI OPTIONAL FILENAME LOG_FILE Log_Files_(*.log)|*.log|All_Files_(*.*)|*.* LOG_FILE:
-DEFAULT_MACRO IN_ETALON_FILE etalon1.ffs
+DEFAULT_MACRO IN_ETALON_FILE $(FME_MF_DIR)etalon.ffs
 GUI FILE_OR_URL IN_ETALON_FILE All_files|*.* IN_ETALON_FILE
-DEFAULT_MACRO IN_RESULTAT_FILE resultat1.ffs
+DEFAULT_MACRO IN_RESULTAT_FILE $(FME_MF_DIR)resultat.ffs
 GUI FILE_OR_URL IN_RESULTAT_FILE All_files|*.* IN_RESULTAT_FILE
 INCLUDE [ if {{$(IN_ETALON_FILE)} == {}} { puts_real {Parameter 'IN_ETALON_FILE' must be given a value.}; exit 1; }; ]
 INCLUDE [ if {{$(IN_RESULTAT_FILE)} == {}} { puts_real {Parameter 'IN_RESULTAT_FILE' must be given a value.}; exit 1; }; ]
@@ -944,10 +944,10 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME "ETALON(FFS_1) Splitter"    INPUT FEATU
 DEFAULT_MACRO WB_CURRENT_CONTEXT
 # -------------------------------------------------------------------------
 INCLUDE [    set macroLine "MACRO AttributeRemover_2_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
-FACTORY_DEF {*} TeeFactory    FACTORY_NAME AttributeRemover_2    INPUT  FEATURE_TYPE RESULTAT_FFS_2    OUTPUT { FEATURE_TYPE AttributeRemover_2_OUTPUT        @RemoveAttributes(fme_encoded,fme_feature_type,multi_reader_full_id,Id,TYPE_LAC,SNRC,multi_reader_type,multi_reader_id,CODE,SHAPE_GEOMETRY,CODE_CLASS,PRECISION,multi_reader_keyword)        @RemoveAttributes(fme_pcre_match"$(AttributeRemover_2_LIST_EXP)")         }
+FACTORY_DEF {*} TeeFactory    FACTORY_NAME AttributeRemover_2    INPUT  FEATURE_TYPE RESULTAT_FFS_2    OUTPUT { FEATURE_TYPE AttributeRemover_2_OUTPUT        @RemoveAttributes(fme_encoded,fme_feature_type,multi_reader_full_id,multi_reader_type,multi_reader_id,multi_reader_keyword)        @RemoveAttributes(fme_pcre_match"$(AttributeRemover_2_LIST_EXP)")         }
 # -------------------------------------------------------------------------
 INCLUDE [    set macroLine "MACRO AttributeRemover_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
-FACTORY_DEF {*} TeeFactory    FACTORY_NAME AttributeRemover    INPUT  FEATURE_TYPE ETALON_FFS_1    OUTPUT { FEATURE_TYPE AttributeRemover_OUTPUT        @RemoveAttributes(fme_encoded,fme_feature_type,multi_reader_full_id,TYPE_LAC,SNRC,multi_reader_type,multi_reader_id,CODE,SHAPE_GEOMETRY,CODE_CLASS,PRECISION,multi_reader_keyword)        @RemoveAttributes(fme_pcre_match"$(AttributeRemover_LIST_EXP)")         }
+FACTORY_DEF {*} TeeFactory    FACTORY_NAME AttributeRemover    INPUT  FEATURE_TYPE ETALON_FFS_1    OUTPUT { FEATURE_TYPE AttributeRemover_OUTPUT        @RemoveAttributes(fme_encoded,fme_feature_type,multi_reader_full_id,multi_reader_type,multi_reader_id,multi_reader_keyword)        @RemoveAttributes(fme_pcre_match"$(AttributeRemover_LIST_EXP)")         }
 # -------------------------------------------------------------------------
 INCLUDE [    if { {ALL} == {MATCH} } {       puts {MACRO ChangeDetector_ATTRMATCH MATCH_ATTRIBUTES { <Unused> }};    }    elseif { {ALL} == {EXCEPT} } {       puts {MACRO ChangeDetector_ATTRMATCH MATCH_ALL_ATTRS_EXCEPT { <Unused> }};    }    else {       puts {MACRO ChangeDetector_ATTRMATCH MATCH_ALL_ATTRIBUTES};    }
 FACTORY_DEF * TeeFactory    FACTORY_NAME ChangeDetector_Original    INPUT FEATURE_TYPE ___nothing_will_match_this_to_handle_when_below_inputs_are_not_specified___    INPUT  FEATURE_TYPE AttributeRemover_OUTPUT    OUTPUT FEATURE_TYPE ___TOMATCH___ ___orig___ yes

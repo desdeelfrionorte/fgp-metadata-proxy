@@ -3,18 +3,25 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Bienvenue sur la page principale de PT Harvester!
-=================================================
+Bienvenue sur la page principale de PT Harvester
+================================================
 
-Documentation des processus par province
-========================================
-
-*à venir...*
-
-Documentation des Workbench FME
-===============================
+Documentation des FME Workbench par province
+============================================
    
-*à venir...*
+.. toctree::
+   :maxdepth: 1   
+   
+   BC_PROD.rst
+   NL_PROD.rst
+
+Documentation de FME Workbench utilitaires
+==========================================
+   
+.. toctree::
+   :maxdepth: 1   
+   
+   Synchronisation_CKAN.rst
 
 
 Documentation des Custom Transformers FME
@@ -26,12 +33,15 @@ Documentation des Custom Transformers FME
    ATTRIBUTE_MANAGER_NG.rst
    ATTRIBUTE_VALUE_TEXT_CLEANER.rst
    AWS_TRANSLATE.rst
+   BC_ATTRIBUTE_FORMATTER.rst
    Catalogue_Reader.rst
    DCAT_Reader.rst
    DEFAULT_ATTRIBUTE_MAPPER.rst
    DEFAULT_ATTRIBUTE_MAPPER_NG.rst
    DUPLICATE_SERVICE_REMOVER.rst
    EMAIL_FORMAT_TESTER.rst
+   EMPTY_FORMAT_MAPPER.rst
+   EMPTY_FORMAT_MAPPER_NG.rst
    EXTRACT_COLLECTION_START_END_DATE.rst
    FORMAT_VALIDATOR.rst
    GEO_EXTENTS_MAPPER.rst
@@ -48,6 +58,9 @@ Documentation des Custom Transformers FME
    LICENSE_FILTER_NG.rst
    LOOKUP_TABLES_READER.rst
    LOOKUP_TABLES_READER_NG.rst
+   NL_ATTRIBUTE_EXTRACTOR.rst
+   NL_CATALOGUE_READER.rst
+   NT_CATALOGUE_READER.rst
    MANUAL_GEOSPATIAL_SETTER.rst
    MAP_RESOURCE_ATTRIBUTION_REMOVER.rst
    MAP_RESOURCE_ATTRIBUTION_REMOVER_NG.rst
