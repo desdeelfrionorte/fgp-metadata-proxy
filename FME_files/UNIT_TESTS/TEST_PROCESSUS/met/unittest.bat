@@ -53,8 +53,8 @@ if "%op%"=="5" SET pt_abbr=NL
 REM if "%op%"=="6" SET pt_abbr=NT
 REM if "%op%"=="7" SET pt_abbr=NS
 REM if "%op%"=="8" SET pt_abbr=NU
-REM if "%op%"=="9" SET pt_abbr=ON
-REM if "%op%"=="10" SET pt_abbr=PEI
+if "%op%"=="9" SET pt_abbr=ON
+if "%op%"=="10" SET pt_abbr=PEI
 REM if "%op%"=="11" SET pt_abbr=QC
 REM if "%op%"=="12" SET pt_abbr=SK
 REM if "%op%"=="13" SET pt_abbr=YT
